@@ -28,3 +28,7 @@ In the folder you will find a file `code.json.model`. You have to rename it in `
 }`
 
 Devices is an option added just for memory at this moment. Because to call the script you will need to use these values to toggle the correct switch. These ids are available within the application in Information > Virtual ID. You have to do it on each device.
+
+## Step 3 - Play with it
+This python script send request in Tuya Cloud and allow you to switch the device and also to get status of the device.
+

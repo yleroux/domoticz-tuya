@@ -119,9 +119,27 @@ class tuya_api:
         else:
             print("HTTP %i - %s, Message %s" % (res.status_code, res.reason, res.text))
 
-
 def main():
-    tuya = tuya_api()
-    tuya.login()
-    tuya.switch(sys.argv[1], sys.argv[2])
+    if sys.argv[1] == '--switch':
+        tuya = tuya_api()
+        tuya.login()
+        tuya.switch(sys.argv[2], sys.argv[3])
+    elif sys.argv[1] == '--status':
+        tuya = tuya_api()
+        tuya.login()
+        print(tuya.getStatus(sys.argv[2]))
+    elif sys.argv[1] == '--toggle':
+        tuya = tuya_api()
+        tuya.login()
+        if tuya.getStatus(sys.argv[2]):
+            tuya.switch(sys.argv[2], "false")
+        else:
+            tuya.switch(sys.argv[2], "true")
+    else: 
+        print('Options available')
+        print('-----------------')
+        print('main.py --switch <ID> <True|False>')
+        print('main.py --status <ID>') 
+        print('main.py --toggle <ID>')        
+
 main()
