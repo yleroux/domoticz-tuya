@@ -1,3 +1,7 @@
+__author__ = "Yann LEROUX"
+__version__ = "1.0.0"
+__email__ = "yleroux@gmail.com"
+
 import requests
 import hmac
 import hashlib
@@ -119,5 +123,5 @@ class tuya_api:
 def main():
     tuya = tuya_api()
     tuya.login()
-    #tuya.switch(sys.argv[1], sys.argv[2])
+    tuya.switch(sys.argv[1], sys.argv[2])
 main()
