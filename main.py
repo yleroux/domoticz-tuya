@@ -1,5 +1,5 @@
 __author__ = "Yann LEROUX"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __email__ = "yleroux@gmail.com"
 
 import requests
@@ -16,8 +16,9 @@ class tuya_api:
 
         self.debug     = False
         self.url_api   = "https://openapi.tuyaeu.com"
+		self.full_path = "/usr/local/domoticz/var/scripts/domo-tuya/"
 
-        with open('code.json') as param_data:
+        with open(self.full_path + 'code.json') as param_data:
             data = json.load(param_data)
             self.client_id = data['client_id']
             self.secret    = data['app_id']

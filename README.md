@@ -1,6 +1,8 @@
 # Domoticz Tuya
 
 Another way to integrate your switch Tuya to Domoticz
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
 
 ## Step 1 - Get Keys & Link your account
 I have discover this method on [Tuyapi Repo](https://github.com/codetheweb/tuyapi/blob/master/docs/SETUP.md). 
@@ -31,4 +33,7 @@ Devices is an option added just for memory at this moment. Because to call the s
 
 ## Step 3 - Play with it
 This python script send request in Tuya Cloud and allow you to switch the device and also to get status of the device.
+
+The python script is just a wrapper and allow you to send the request. 
+Put the 
 
