@@ -1,3 +1,5 @@
+#!/opt/bin/python3
+ 
 __author__ = "Yann LEROUX"
 __version__ = "1.0.1"
 __email__ = "yleroux@gmail.com"
