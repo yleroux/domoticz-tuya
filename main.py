@@ -1,7 +1,7 @@
 #!/opt/bin/python3
  
 __author__ = "Yann LEROUX"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __email__ = "yleroux@gmail.com"
 
 import requests
@@ -18,7 +18,7 @@ class tuya_api:
 
         self.debug     = False
         self.url_api   = "https://openapi.tuyaeu.com"
-		self.full_path = "/usr/local/domoticz/var/scripts/domo-tuya/"
+        self.full_path = "/usr/local/domoticz/var/scripts/domo-tuya/"
 
         with open(self.full_path + 'code.json') as param_data:
             data = json.load(param_data)
@@ -122,27 +122,33 @@ class tuya_api:
         else:
             print("HTTP %i - %s, Message %s" % (res.status_code, res.reason, res.text))
 
+def help():
+    print('Options available')
+    print('-----------------')
+    print('main.py --switch <ID> <True|False>')
+    print('main.py --status <ID>') 
+    print('main.py --toggle <ID>')  
+
 def main():
-    if sys.argv[1] == '--switch':
-        tuya = tuya_api()
-        tuya.login()
-        tuya.switch(sys.argv[2], sys.argv[3])
-    elif sys.argv[1] == '--status':
-        tuya = tuya_api()
-        tuya.login()
-        print(tuya.getStatus(sys.argv[2]))
-    elif sys.argv[1] == '--toggle':
-        tuya = tuya_api()
-        tuya.login()
-        if tuya.getStatus(sys.argv[2]):
-            tuya.switch(sys.argv[2], "false")
-        else:
-            tuya.switch(sys.argv[2], "true")
-    else: 
-        print('Options available')
-        print('-----------------')
-        print('main.py --switch <ID> <True|False>')
-        print('main.py --status <ID>') 
-        print('main.py --toggle <ID>')        
+    if len(sys.argv) <= 1:
+        help()
+    else:
+        if sys.argv[1] == '--switch':
+            tuya = tuya_api()
+            tuya.login()
+            tuya.switch(sys.argv[2], sys.argv[3])
+        elif sys.argv[1] == '--status':
+            tuya = tuya_api()
+            tuya.login()
+            print(tuya.getStatus(sys.argv[2]))
+        elif sys.argv[1] == '--toggle':
+            tuya = tuya_api()
+            tuya.login()
+            if tuya.getStatus(sys.argv[2]):
+                tuya.switch(sys.argv[2], "false")
+            else:
+                tuya.switch(sys.argv[2], "true")
+        else: 
+            help()
 
 main()
