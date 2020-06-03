@@ -6,7 +6,7 @@ Une autre solution pour intégrer des objets Tuya dans Domoticz.
 
 ## Comment ça marche ?
 ### Step 1 - Obtenir des clés et lié son compte
-A force de recherche je suis tombé sur une nouvelle méthode pour récupérer les fameuses Local Key sur cette page [Tuyapi Repo](https://github.com/codetheweb/tuyapi/blob/master/docs/SETUP.md). 
+A force de recherche je suis tombé sur une nouvelle méthode pour récupérer les fameuses Local Key sur cette page [Tuyapi Repo](https://github.com/codetheweb/tuyapi/blob/master/docs/SETUP.md) et la page officiel sur le [Tuya](https://docs.tuya.com/en/iot/open-api/quick-start/quick-start1?id=K95ztz9u9t89n). 
 Malheureusement malgré plusieurs essais, je n'ai pas réussi à intégrer de manière fonctionnelle mes prises dans Domoticz.
 J'ai fini par trouver une autre solution. Cela existe peut être déjà mais ici c'est ma solution.
 
@@ -66,7 +66,7 @@ Another way to integrate your switch Tuya to Domoticz
 
 ## What is it?
 ### Step 1 - Get Keys & Link your account
-I have discover this method on [Tuyapi Repo](https://github.com/codetheweb/tuyapi/blob/master/docs/SETUP.md). 
+I have discover this method on [Tuyapi Repo](https://github.com/codetheweb/tuyapi/blob/master/docs/SETUP.md) and also information from [official Tuya website](https://docs.tuya.com/en/iot/open-api/quick-start/quick-start1?id=K95ztz9u9t89n).
 Unfortunatly this tutorial did not work well for me and even if I was able to add the devices on my Domoticz server I was not able use them.
 After digging a bit I have found few clues and I work on my own solution. 
 Perhaps it exists already something like mine.
